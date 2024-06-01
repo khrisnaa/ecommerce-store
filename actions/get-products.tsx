@@ -11,6 +11,7 @@ interface Query {
 }
 
 const getProducts = async (query: Query): Promise<Product[]> => {
+  //filter products
   const url = qs.stringifyUrl({
     url: URI,
     query: {
@@ -21,7 +22,7 @@ const getProducts = async (query: Query): Promise<Product[]> => {
     },
   });
 
-  const res = await fetch(URI, { cache: 'no-store' });
+  const res = await fetch(url, { cache: 'no-store' });
 
   return res.json();
 };
