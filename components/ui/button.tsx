@@ -15,6 +15,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className,
           'w-auto rounded-full border-transparent bg-black px-5 py-3 font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-50',
         )}
+        {...props}
       >
         {children}
       </button>
